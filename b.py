@@ -1,11 +1,24 @@
 import requests, os, threading, random, time
 from colorama import Fore, Back, Style
+from pystyle import Colors, Colorate, Center
 
 clear = lambda: os.system("cls" if os.name in ("nt", "dos") else "clear") # Don't touch this
 usernames = open('check.txt', 'r').read().split('\n')
 clear()
 count = 0
 proxyDebug = False
+
+# Vanity Generator Logo
+logo = """
+██████╗░░█████╗░██████╗░██╗░░░░░░█████╗░██╗░░██╗  ░█████╗░██╗░░██╗███████╗░█████╗░██╗░░██╗██████╗░
+██╔══██╗██╔══██╗██╔══██╗██║░░░░░██╔══██╗╚██╗██╔╝  ██╔══██╗██║░░██║██╔════╝██╔══██╗██║░██╔╝██╔══██╗
+██████╔╝██║░░██║██████╦╝██║░░░░░██║░░██║░╚███╔╝░  ██║░░╚═╝███████║█████╗░░██║░░╚═╝█████═╝░██████╔╝
+██╔══██╗██║░░██║██╔══██╗██║░░░░░██║░░██║░██╔██╗░  ██║░░██╗██╔══██║██╔══╝░░██║░░██╗██╔═██╗░██╔══██╗
+██║░░██║╚█████╔╝██████╦╝███████╗╚█████╔╝██╔╝╚██╗  ╚█████╔╝██║░░██║███████╗╚█████╔╝██║░╚██╗██║░░██║
+╚═╝░░╚═╝░╚════╝░╚═════╝░╚══════╝░╚════╝░╚═╝░░╚═╝  ░╚════╝░╚═╝░░╚═╝╚══════╝░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝"""
+
+def printLogo():
+        print(Center.XCenter(Colorate.Horizontal(Colors.white_to_green, logo, 1)))
 
 def check():
     global count
@@ -35,6 +48,7 @@ def check():
             continue
 
 clear()
+printLogo()
 try:
     check()
 except KeyboardInterrupt:
