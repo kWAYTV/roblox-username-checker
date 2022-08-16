@@ -38,17 +38,17 @@ def check():
                 count += 1
                 if "User not found" in r:
                     free += 1
-                    print(f"{Fore.RED}[{Fore.RESET}-{Fore.RED}] {Fore.RESET}Free: " + user)
+                    print(f"{Fore.GREEN}[{Fore.RESET}+{Fore.GREEN}] {Fore.RESET}Free: " + user)
                     with open('free.txt', 'a') as f:
                         f.write(user + '\n')
                 else:
                     taken += 1
-                    print(f"{Fore.GREEN}[{Fore.RESET}+{Fore.GREEN}] {Fore.RESET}Taken: " + user)
+                    print(f"{Fore.RED}[{Fore.RESET}-{Fore.RED}] {Fore.RESET}Taken: " + user)
                     with open('taken.txt', 'a') as f:
                         f.write(user + '\n')
                 os.system(f"title Roblox Username Checker - Status: {count}/{len(usernames)} - Free: {free} - Taken: {taken} - Error: {error}")
         except Exception as e:
-            print(f"{Fore.RED}[{Fore.RESET}-{Fore.RED}] {Fore.RESET}Error: " + str(e))
+            print(f"{Fore.YELLOW}[{Fore.RESET}!{Fore.YELLOW}] {Fore.RESET}Error: " + str(e))
             error += 1
             continue
 
@@ -57,11 +57,11 @@ printLogo()
 try:
     check()
     print("Finished!")
-    print(f"{Fore.RED}[{Fore.RESET}-{Fore.RED}] {Fore.RESET}Exiting.")
+    print(f"{Fore.YELLOW}[{Fore.RESET}!{Fore.YELLOW}] {Fore.RESET}Exiting.")
     time.sleep(1)
     exit()
 except KeyboardInterrupt:
     clear()
-    print(f"{Fore.RED}[{Fore.RESET}-{Fore.RED}] {Fore.RESET}Exiting.")
+    print(f"{Fore.YELLOW}[{Fore.RESET}!{Fore.YELLOW}] {Fore.RESET}Exiting.")
     time.sleep(1)
     exit()
