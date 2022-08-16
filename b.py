@@ -31,7 +31,7 @@ def check():
                         f.write(user + '\n')
                 os.system(f"title Roblox Username Checker ^- Checked: " + str(count) + " ^- Remaining: " + str(len(usernames) - count))
         except Exception as e:
-            print(f"{Fore.RED}[{Fore.RESET}-{Fore.RED}] {Fore.RESET}Error: " + e)
+            print(f"{Fore.RED}[{Fore.RESET}-{Fore.RED}] {Fore.RESET}Error: " + str(e))
 
 clear()
 try:
