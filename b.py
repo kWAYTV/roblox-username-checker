@@ -56,6 +56,10 @@ clear()
 printLogo()
 try:
     check()
+    print("Finished!")
+    print(f"{Fore.RED}[{Fore.RESET}-{Fore.RED}] {Fore.RESET}Exiting.")
+    time.sleep(1)
+    exit()
 except KeyboardInterrupt:
     clear()
     print(f"{Fore.RED}[{Fore.RESET}-{Fore.RED}] {Fore.RESET}Exiting.")
