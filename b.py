@@ -70,10 +70,6 @@ def check():
                 continue
             if proxyless == True:
                 r = requests.get(f"https://api.roblox.com/users/get-by-username?username={line}").text
-                if proxyDebug == True:
-                    print(f"{Fore.MAGENTA}[{Fore.RESET}!{Fore.MAGENTA}] {Fore.RESET}Using proxy: {Fore.MAGENTA}{proxyDict}{Fore.RESET}")
-                else:
-                    pass
             elif proxyless == False:
                 proxy = random.choice(open("proxies.txt","r").read().splitlines()); proxyDict = {"http": f"http://{proxy}"}
                 r = requests.get(f"https://api.roblox.com/users/get-by-username?username={line}", proxies=proxyDict).text
